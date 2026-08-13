@@ -1,0 +1,19 @@
+# Data files
+*.csv
+*.xlsx
+*.parquet
+*.zip
+
+# Python
+__pycache__/
+*.pyc
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Models
+*.pkl
+
+# Operating system files
+.DS_Store
+Thumbs.db
