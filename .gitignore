@@ -3,6 +3,7 @@
 *.xlsx
 *.parquet
 *.zip
+*.html
 
 # Python
 __pycache__/
