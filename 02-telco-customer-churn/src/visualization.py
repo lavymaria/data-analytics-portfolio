@@ -176,22 +176,23 @@ class ModelVisualizer:
         top_features = (
             feature_importance_df
             .sort_values(
-                by="Importance",
+                by="Abs_Coefficient",
                 ascending=False
             )
             .head(top_n)
-        )
+    )
 
         plt.figure(figsize=(10,6))
 
         sns.barplot(
             data=top_features,
-            x="Importance",
+            x="Abs_Coefficient",
             y="Feature"
         )
 
+
         plt.title(
-            "Top Feature Importance"
+            "Top Logistic Regression Drivers of Churn"
         )
 
         plt.show()

@@ -27,6 +27,26 @@ class BusinessReportGenerator:
         )
 
         return best_model
+  
+
+    @staticmethod
+    def create_logistic_feature_importance(
+        model,
+        feature_names
+    ):
+        feature_importance = pd.DataFrame({
+            "Feature": feature_names,
+            "Coefficient": model.coef_[0]
+        })
+
+        feature_importance["Abs_Coefficient"] = (
+            feature_importance["Coefficient"].abs()
+        )
+
+        return feature_importance.sort_values(
+            by="Abs_Coefficient",
+            ascending=False
+        )
 
     @staticmethod
     def generate_executive_summary():
