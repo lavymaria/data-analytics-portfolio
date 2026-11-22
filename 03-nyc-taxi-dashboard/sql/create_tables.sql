@@ -57,4 +57,21 @@ SELECT column_name, data_type
 FROM information_schema.columns
 WHERE table_name = 'taxi_trips'
 ORDER BY column_name;
+
+SELECT *
+FROM taxi_zones
+LIMIT 10;
 	
+SELECT COUNT(*)
+FROM taxi_zones;
+
+SELECT COUNT(*)
+FROM fact_trip_summary;
+
+COPY taxi_zones(locationid, borough, zone, service_zone)
+FROM 'D:\GIT\data-analytics-portfolio\03-nyc-taxi-dashboard\data\taxi_zone_lookup\taxi_zone_lookup.csv'
+DELIMITER ','
+CSV HEADER;
+
+SELECT COUNT(*)
+FROM taxi_zones;
